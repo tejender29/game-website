@@ -1,0 +1,71 @@
+/* background + reset */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: url('https://wallpaperaccess.com/full/39624.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+  text-align: center;
+  padding: 0;
+}
+
+/* header */
+header {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 40px 20px;
+  backdrop-filter: blur(6px);
+}
+
+header h1 {
+  font-size: 3rem;
+  color: #00ffe7;
+  text-shadow: 0 0 10px #00ffe7;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 1.2rem;
+  color: #ccc;
+}
+
+/* grid layout */
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+/* card style */
+.game-card {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 25px;
+  border-radius: 15px;
+  text-decoration: none;
+  color: white;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+  transition: transform 0.4s, box-shadow 0.4s;
+}
+
+.game-card:hover {
+  transform: scale(1.07);
+  box-shadow: 0 0 25px #00ffe7, 0 0 10px #00ffe7;
+  color: #00ffe7;
+}
+
+/* game icon */
+.game-card img {
+  width: 80px;
+  margin-bottom: 15px;
+}
+
+/* footer */
+footer {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 15px;
+  font-size: 0.9rem;
+  color: #aaa;
+  margin-top: 40px;
+}
