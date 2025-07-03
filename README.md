@@ -24,15 +24,22 @@ Welcome to **Tejender's GameZone** — a fun collection of classic games built u
 > ❌ No scoring system or scoreboard yet — just focused on basic interaction and design.
 
 ## 📁 Folder Structure
+
+```
 game-website/
 ├── index.html
 ├── style.css
 ├── README.md
 ├── games/
-│   ├── mind/         # Memory Game
-│   ├── snake/        # Snake Game
-│   ├── tictactoe/    # Tic Tac Toe
-│   └── rps/          # Rock Paper Scissors
+│   ├── mind/          # Memory Game
+│   │   └── script.js
+│   ├── snake/         # Snake Game
+│   │   └── script.js
+│   ├── tictactoe/     # Tic Tac Toe
+│   │   └── script.js
+│   └── rps/           # Rock Paper Scissors
+│       └── script.js
+```
 ## 🚀 Tech Stack
 
 - **Frontend**: HTML5, CSS3, JavaScript (ES6)
