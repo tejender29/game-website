@@ -5,12 +5,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>🎮 Tejender's GameZone</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    #user-section {
+      text-align: center;
+      margin: 20px;
+    }
+    #userForm input {
+      padding: 8px;
+      margin-right: 10px;
+    }
+    #userForm button, #resetBtn {
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
   <header>
     <h1>🎮 Tejender's GameZone</h1>
     <p>Select a game and start playing!</p>
   </header>
+
+  <div id="user-section">
+    <form id="userForm">
+      <input type="text" id="username" placeholder="Enter your name" required />
+      <button type="submit">Save Profile</button>
+    </form>
+    <p id="greeting" style="font-weight: bold; font-size: 18px;"></p>
+    <button id="resetBtn" style="display: none;">Reset Profile</button>
+  </div>
 
   <main class="game-grid">
     <a href="games/mind/index.html" class="game-card">
@@ -34,5 +57,44 @@
   <footer>
     <p>© 2025 Tejender Singh | Built with fun😂</p>
   </footer>
+
+  <script>
+    const form = document.getElementById("userForm");
+    const greeting = document.getElementById("greeting");
+    const resetBtn = document.getElementById("resetBtn");
+
+    window.onload = function() {
+      const stored = localStorage.getItem("gameUser");
+      if (stored) {
+        const user = JSON.parse(stored);
+        greeting.textContent = `Welcome, ${user.name}!`;
+        form.style.display = "none";
+        resetBtn.style.display = "inline-block";
+      }
+    };
+
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+      const username = document.getElementById("username").value;
+      const userProfile = {
+        name: username,
+        highScores: {
+          memory: 0,
+          snake: 0,
+          tictactoe: 0,
+          rps: 0
+        }
+      };
+      localStorage.setItem("gameUser", JSON.stringify(userProfile));
+      greeting.textContent = `Welcome, ${username}!`;
+      form.style.display = "none";
+      resetBtn.style.display = "inline-block";
+    });
+
+    resetBtn.onclick = function() {
+      localStorage.removeItem("gameUser");
+      location.reload();
+    };
+  </script>
 </body>
 </html>
